@@ -7,7 +7,7 @@ module.exports = {
             const { longitude, latitude } = req.params;
             console.log(longitude, latitude)
 
-            const response = await axios.get(`http://api.airvisual.com/v2/nearest_city?lat=${longitude}&lon=${longitude}&key=${API_KEY}`);
+            const response = await axios.get(`http://api.airvisual.com/v2/nearest_city?lat=${latitude}&lon=${longitude}&key=${API_KEY}`);
             const airQualityInfo = response.data?.data?.current;
             res.json({ results: airQualityInfo });
         } catch (error) {
