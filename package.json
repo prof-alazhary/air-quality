@@ -1,0 +1,24 @@
+{
+  "name": "air-quality",
+  "version": "1.0.0",
+  "description": "mini project to create a REST API responsible for exposing 'the air quality information' of a nearest city to GPS coordinates",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prof-alazhary/air-quality.git"
+  },
+  "keywords": [
+    "#air-quality",
+    "#Express.js",
+    "#REST_API"
+  ],
+  "author": "Mohamed Alazhary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prof-alazhary/air-quality/issues"
+  },
+  "homepage": "https://github.com/prof-alazhary/air-quality#readme"
+}
