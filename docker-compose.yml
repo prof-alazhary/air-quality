@@ -1,0 +1,33 @@
+version: '3'
+networks:
+  my_network:
+    driver: bridge
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - my_network
+
+  node_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node_server
+    restart: always
+    depends_on:
+      - mongodb
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    networks:
+      - my_network
+
+volumes:
+  mongodb_data:
