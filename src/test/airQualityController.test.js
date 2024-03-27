@@ -1,7 +1,4 @@
 const axios = require('axios');
-const sinon = require('sinon');
-const chai = require('chai');
-const expect = chai.expect;
 const { getAirQuality, getMostPolluted } = require('../controllers/airQualityController');
 const AirQuality = require('../models/airQualityModel');
 
