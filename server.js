@@ -10,7 +10,7 @@ const serverAddress = process.env.NODE_SERVER_ADDRESS || 'http://localhost';
 
 app.use(express.json());
 
-app.use('/api/air-quality', airQualityRoutes);
+app.use('/api', airQualityRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running on ${serverAddress}:${port}`);
