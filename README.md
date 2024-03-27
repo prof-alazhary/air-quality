@@ -73,11 +73,12 @@ Then All what you need to do is:
 ```bash
 air-quality/
 │
-├── config/              # Configuration files
-├── controllers/         # Controllers for handling API requests
-├── models/              # MongoDB models
-├── routes/              # API route definitions
-├── tests/               # Unit tests
+src/
+    ├── config/              # Configuration files
+    ├── controllers/         # Controllers for handling API requests
+    ├── models/              # MongoDB models
+    ├── routes/              # API route definitions
+    ├── tests/               # Unit tests
 ├── .gitignore
 ├── package.json
 ├── server.js            # Entry point of the application
