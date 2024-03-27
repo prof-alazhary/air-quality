@@ -4,7 +4,17 @@ This project serves as the backend for retrieving air quality information via RE
 
 ## Installation:
 
-All what you need to do is:
+#### Before the installation, please add the `.env` file to your root project with the following Env Vars:
+```bash
+API_KEY=<YOR-API-KEY-HERE>
+NODE_SERVER_ADDRESS=http://localhost
+NODE_SERVER_PORT=3000
+MONGODB_URI=mongodb://mongodb:27017/air_quality_db
+IQAIR_API_URL=http://api.airvisual.com
+NEAREST_CITY_API=/v2/nearest_city
+```
+
+Then All what you need to do is:
 
 ```bash
 > docker-compose up --build
