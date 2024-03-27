@@ -10,12 +10,23 @@ module.exports = {
             const { longitude, latitude } = req.params;
             console.log(longitude, latitude);
             const response = await axios.get(`${IQAIR_API_URL}${NEAREST_CITY_API}?lat=${latitude}&lon=${longitude}&key=${API_KEY}`);
-            const { pollution } = response?.data?.data?.current;
-            await AirQuality.create(pollution);
+            const { city, current: { pollution } } = response?.data?.data;
+            await AirQuality.create({ city: city.toLowerCase(), pollution });
             res.json({ results: { pollution } });
         } catch (error) {
             console.error('Error fetching air quality:', error);
             res.status(500).json({ error: 'Internal server error' });
         }
     },
+    getMostPolluted: async (req, res) => {
+        try {
+            const { city } = req.params;
+            const criteria = { ...(city && { city: city.toLowerCase() }) };
+            const mostPollutedData = await AirQuality.findOne(criteria, {}, { sort: { 'pollution.aqius': -1 } });
+            res.json({ mostPollutedData });
+        } catch (error) {
+            console.error('Error fetching most polluted datetime:', error);
+            res.status(500).json({ error: 'Internal server error' });
+        }
+    }
 };
