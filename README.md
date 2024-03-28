@@ -39,7 +39,7 @@ Then All what you need to do is:
 }
 ```
 
-#### 2) `GET /api/most-polluted/:city`:
+#### 2) `GET /api/most-polluted` or `GET /api/most-polluted/:city`:
  Retrieves data about the most polluted air time for a specific city.
 ```json
 // you can perform any of these APIs:
